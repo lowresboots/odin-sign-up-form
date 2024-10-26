@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Definitely Not a Scam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="left-panel">
+        <div class="logo-container">
+            <div class="logo-text">DEFINITELY<br>NOT A<br>SCAM</div>
+        </div>
+        <div class="photo-credit">Photo by Grok on X</div>
+    </div>
+
+    <div class="right-panel">
+        <div class="form-intro">
+            <h1>This is definitely not a scam!</h1>
+            <p>You <span class="emphasized">know</span> you want to give us all your personal information.
+                Sign up <span class="emphasized">now</span> to get started with your journey to financial freedom*!</p>
+            <p class="disclaimer">*Financial freedom may include complete freedom from all your finances</p>
+        </div>
+
+        <form class="form-container" id="scamForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address.</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required pattern="\d{10}">
+                    <div class="error-message" id="phoneError">Please enter a valid 10-digit phone number.</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="maidenName">Mother's Maiden Name</label>
+                    <input type="text" id="maidenName" name="maidenName" required pattern="[A-Za-z\s]+">
+                    <div class="error-message" id="maidenNameError">Please use letters and spaces only.</div>
+                </div>
+                <div class="form-group">
+                    <label for="bankAccount">Bank Account Number</label>
+                    <input type="text" id="bankAccount" name="bankAccount" required pattern="\d+">
+                    <div class="error-message" id="bankAccountError">Please enter a valid bank account number.</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" required>
+                </div>
+                <div class="form-group">
+                    <label for="ssn">Social Security Number</label>
+                    <input type="text" id="ssn" name="ssn" pattern="\d{3}-?\d{2}-?\d{4}" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required
+                        pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{8,}">
+                    <div class="input-caption">Must be at least 8 characters with a number, a special character, and an
+                        uppercase letter.</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required
+                        pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{8,}">
+                    <div class="error-message" id="passwordMatchError">Passwords do not match.</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="spamConsent" name="spamConsent" checked>
+                    <label for="spamConsent">
+                        I consent to receive endless spam and definitely legitimate business opportunities
+                    </label>
+                </div>
+            </div>
+
+            <div class="signature-container">
+                <label>Sign here to transfer all your assets:</label>
+                <canvas id="signatureCanvas" width="400" height="200"></canvas>
+                <button type="button" class="clear-signature" onclick="clearSignature()">Clear Signature</button>
+            </div>
+
+            <button type="submit">Create Account</button>
+            <p class="disclaimer">By clicking "Create Account", you agree to surrender your life savings</p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
